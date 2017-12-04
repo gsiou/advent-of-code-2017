@@ -1,0 +1,1 @@
+console.log(require('fs').readFileSync('data1.txt', 'utf8').toString().trim().split('').map(x => parseInt(x)).reduce((sum, curVal, curInd, arr) => (arr[(curInd + (process.argv[2] === '--part2' ? arr.length / 2 : 1)) % arr.length] === curVal ? sum + curVal : sum), 0))
