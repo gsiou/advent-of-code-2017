@@ -1,0 +1,1 @@
+console.log(require('fs').readFileSync('data1.txt', 'utf8').split('\n').map(x=>x.split('\t').map(y => parseInt(y) || 0).sort((a, b) => b - a).filter((val, ind, arr) => ind === 0 || ind === arr.length - 1).reduce((acc, val) => acc - val)).reduce((acc, val) => acc + val))
